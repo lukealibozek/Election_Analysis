@@ -1,52 +1,25 @@
+# Add our dependencies.
 import csv
 import os
-# The data we need to retrieve.
-# 1. The total number of votes cast
-# 2. A complete list of candidates who receive votes.
-# 3. The percentage of votes each cadidate won
-# 4. The total number of votes each vandidate won
-# 5. The winner of the election based on popular vote
+# Assign a variable to load a file from a path.
+file_to_load = os.path.join("Resources", "election_results.csv")
+# Assign a variable to save the file to a path.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-# Check current working directory - troubleshooting VS Code
-# cwd = os.getcwd()
-# files = os.listdir(cwd)
-# print(f"Files in {cwd}: {files}")
+# 1. Initialize a total vote counter.
+total_votes = 0
 
-# Assign a variable for the file to load and the path.
-file_to_load = os.path.join('Resources','election_results.csv')
-
-#Open the election results and read the file.
+# Open the election results and read the file
 with open(file_to_load) as election_data:
-
-    # To do: read and analyze the data here
     file_reader = csv.reader(election_data)
-    
-    # Print the header row
-    headers = next(file_reader)
-    print(headers)
-    input("next?")
 
+    # Read the header row.
     headers = next(file_reader)
-    print(headers)
-    input("next?")
 
-    #Print each row in the CSV file
+    # Print each row in the CSV file.
     for row in file_reader:
-        print(row[1])
+        # 2. Add to the total vote count.
+        total_votes += 1
 
-        input("next?")
-
-#Close the file.
-election_data.close()
-
-# # Create a filename variable to a direct or indirect path to the file.
-# file_to_save = os.path.join("analysis", "election_analysis.txt")
-
-# # Using the with statement open the file as a text file
-# with open(file_to_save, "w") as txt_file:
-#     #Write some data
-#     txt_file.write("Counties in the Election\n--------------------\n")
-#     txt_file.write("Arapahoe\nDenver\nJefferson")
-
-# #Close the file
-# .close()
+# 3. Print the total votes.
+print(total_votes)
