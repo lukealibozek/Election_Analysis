@@ -1,6 +1,6 @@
 # Election_Analysis
 
-**Files Associated with This Analysis**:
+**Resources**:
 * **Source**: election_results.csv
 * **Output**: election_analysis.txt
 * **Script**: PyPoll_Challenge.py 
