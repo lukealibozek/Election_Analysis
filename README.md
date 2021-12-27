@@ -1,6 +1,10 @@
 # Election_Analysis
 
-Use your repository README to write your analysis of Deliverables 1 and 2. The analysis should contain the following:
+**Files Associated with This Analysis**:
+* **Source**: election_results.csv
+* **Output**: election_analysis.txt
+* **Script**: PyPoll_Challenge.py 
+
 
 ## Overview of Election Audit: 
 
