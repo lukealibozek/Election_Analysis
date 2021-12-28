@@ -1,35 +1,3 @@
-# Election_Analysis
-
-**Resources**:
-* **Data Source**: election_results.csv
-* **Analysis Output**: election_analysis.txt
-* **Script**: PyPoll_Challenge.py 
-
-
-## Overview of Election Audit: 
-This project involved the construction of a python script that analyzed raw election output to perform the following analyses:
-* A count of total votes cast
-* A count of votes per candidate, along with percentage of total
-* A count of votes by county, along with percentage of total.
-* A determination of the county with the largest voter turnout
-* A determination of the winning candidate
-
-**Data Source**: election_results.csv
-* A CSV file containing 369,712 rows of information
-* The data contained the following headers:
-    * Ballot ID
-    * County
-    * Candidate Name
-* Each row represented one unique vote
-
-###  **Script Breakdown**
-
-PyPoll_Challenge.py
-
-#### Setup
-Adding dependencies, establishing path variables, and initializing lists, arrays, and variables to hold vote counts and calculations
-
-```python
 # Import dependencies.
 import csv
 import os
@@ -58,10 +26,7 @@ winning_percentage = 0
 # Track the largest county and county voter turnout.
 winning_county = ""
 winning_county_turnout = 0
-```
-#### Read the results, count the votes
 
-```python
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
     reader = csv.reader(election_data)
@@ -106,9 +71,7 @@ with open(file_to_load) as election_data:
 
         # Add a vote to that county's vote count.
         county_votes[county_name] += 1
-```
-#### Calculate the Results, Write to File
-```python
+
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
 
@@ -184,52 +147,3 @@ with open(file_to_save, "w") as txt_file:
 
     # Save the winning candidate's name to the text file
     txt_file.write(winning_candidate_summary)
-```
-
-### **Challenges**
-
-What we were not able to determine from this information:
-* The voter turnout per county as a percentage of **total registered voters per county**. It is possible that, despite one county having the highest voter count of total votes cast, that other counties could have had 100% voter turnout but were too small to outweigh a larger county. 
-
-## Election Audit Results:
----
-**Total Votes**: 369,711
-
----
-
-**Votes by County**:
-* Jefferson: 10.5% (38,855)
-* Denver: 82.8% (306,055)
-* Arapahoe: 6.7% (24,801)
-
-**Largest County Turnout**: Denver
-
----
-**Votes by Candidate**:
-* Charles Casper Stockham: 23.0% (85,213)
-* Diana DeGette: 73.8% (272,892)
-* Raymon Anthony Doane: 3.1% (11,606)
----
-**Election Winner**:  
-* **Diana DeGette**
-* 272,892 Votes
-* 73.8% of Total Votes
-
-
-## Election-Audit Summary: 
-This script was successfully able to analyze a considerable amount of data in a short amount of time and produce results in an orderly manner. This script can be reusable with a few minor tweaks.
-
-The source file has three data points that need to be maintained in structure, but can be tweaked to accept alternate data:
-* **Ballot ID**: This column contains a unique identifier for each row of data. Required.
-* **County**: This column contains metadata for the data that is to be counted.
-* **Candidate**: This contains the primary value to be counted. 
-
-The script will automatically create a list of items found in columns 2 and 3, so the only tweaks necessary  are to change the naming conventions.
-
-For example: To run a survey to determine the most popular donut.
-1. Find and replace the word "candidate" for the word "donut"
-2. Find and replace the word "county" for the word "store"
-3. Ensure the paths point to the correct locations (lines 6 and 8)
-4. Ensure the election/survey results have "store" in column 2, and "donut" in column 3.
-
-The results for this script will tally vote counts for the most popular donut, and provide additional statistics for the most popular donut store. Of course, with a survey such as this, it is important to limit input to a list of options, as custom input will return skewed counts (such as a misspellings, or extra spaces).
