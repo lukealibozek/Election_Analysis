@@ -217,4 +217,7 @@ What we were not able to determine from this information:
 
 
 ## Election-Audit Summary: 
-In a summary statement, provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least **two** examples of how this script can be modified to be used for other elections.
+This script was successfully able to analyze a considerable amount of data in a short amount of time and produce results in an orderly manner. This script can be reusable with a few minor tweaks.
+
+The source file has three data points:
+* Ballot ID: This column contains a unique identifier that is required for database 
