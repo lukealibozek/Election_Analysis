@@ -107,7 +107,7 @@ with open(file_to_load) as election_data:
         # Add a vote to that county's vote count.
         county_votes[county_name] += 1
 ```
-#### 3. Calculate the results, write to file
+#### 3. Run analysis to find winners, write to file
 ```python
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
