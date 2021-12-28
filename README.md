@@ -226,10 +226,20 @@ The source file has three data points that need to be maintained in structure, b
 
 The script will automatically create a list of items found in columns 2 and 3, so the only tweaks necessary  are to change the naming conventions.
 
-For example: To run a survey to determine the most popular donut.
+### Alternate Use Example 1
+To run a survey to determine the most popular donut.
 1. Find and replace the word "candidate" for the word "donut"
 2. Find and replace the word "county" for the word "store"
 3. Ensure the paths point to the correct locations (lines 6 and 8)
 4. Ensure the election/survey results have "store" in column 2, and "donut" in column 3.
 
 The resulting script will tally vote counts for the most popular donut, and provide additional statistics regarding the most popular donut store. Of course, with a survey such as this, it is important to limit input to a list of options, as custom input can result in inaccurate analysis (misspellings or extra spaces, for example, would result in multiple list entries for a single item, splitting votes).
+
+### Alternate Use Example 2
+To tally the votes for class president
+1. Keep the "candidate" value
+2. Find and replace the word "county" for the word "classroom"
+3. Ensure the paths point to the correct locations (lines 6 and 8)
+4. Ensure the election/survey results have "classroom" in column 2
+
+The resulting script will tally vote counts for class president, but also provide analysis on the voter turnout by voter classroom. 
