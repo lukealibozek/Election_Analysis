@@ -26,7 +26,7 @@ This project involved the construction of a python script that analyzed raw elec
 
 PyPoll_Challenge.py
 
-#### Setup
+#### 1. Setup
 Adding dependencies, establishing path variables, and initializing lists, arrays, and variables to hold vote counts and calculations
 
 ```python
@@ -59,7 +59,7 @@ winning_percentage = 0
 winning_county = ""
 winning_county_turnout = 0
 ```
-#### Read the results, count the votes
+#### 2. Read the results, count the votes
 
 ```python
 # Read the csv and convert it into a list of dictionaries
@@ -107,7 +107,7 @@ with open(file_to_load) as election_data:
         # Add a vote to that county's vote count.
         county_votes[county_name] += 1
 ```
-#### Calculate the Results, Write to File
+#### 3. Calculate the results, write to file
 ```python
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
@@ -232,4 +232,4 @@ For example: To run a survey to determine the most popular donut.
 3. Ensure the paths point to the correct locations (lines 6 and 8)
 4. Ensure the election/survey results have "store" in column 2, and "donut" in column 3.
 
-The results for this script will tally vote counts for the most popular donut, and provide additional statistics for the most popular donut store. Of course, with a survey such as this, it is important to limit input to a list of options, as custom input will return skewed counts (such as a misspellings, or extra spaces).
+The resulting script will tally vote counts for the most popular donut, and provide additional statistics regarding the most popular donut store. Of course, with a survey such as this, it is important to limit input to a list of options, as custom input can result in inaccurate analysis (misspellings or extra spaces, for example, would result in multiple list entries for a single item, splitting votes).
